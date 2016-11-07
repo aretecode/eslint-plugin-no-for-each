@@ -1,0 +1,33 @@
+{
+  "name": "eslint-plugin-no-for-each",
+  "version": "0.0.3",
+  "description": "fix forEach loops",
+  "keywords": [
+    "eslint",
+    "eslintplugin",
+    "eslint-plugin",
+    "foreach",
+    "loops",
+    "optimization"
+  ],
+  "author": "aretecode",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "mocha tests --recursive"
+  },
+  "dependencies": {
+    "requireindex": "~1.1.0"
+  },
+  "devDependencies": {
+    "mocha": "^2.4.5",
+    "eslint": "3.6.0",
+    "eslint-loader": "1.5.0"
+  },
+  "peerDependencies": {
+    "eslint": "^2.0.0 || ^3.0.0"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "license": "ISC"
+}
