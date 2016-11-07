@@ -1,6 +1,7 @@
 # eslint-plugin-no-for-each
-
-disable bad loops
+- fix forEach loops
+- IS A [WIP]
+- [ ] add large js files to test failed fixing & missing safety
 
 ## Installation
 
