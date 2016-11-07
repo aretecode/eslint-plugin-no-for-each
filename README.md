@@ -49,6 +49,9 @@ Add `no-for-each` to the plugins section of your `.eslintrc` configuration file.
 
 Then configure the rules you want to use under the rules section.
 
+default: `2` or `['error']` 
+cache-length: `['error', 'cache-length']` 
+
 ```json
 {
     "rules": {
