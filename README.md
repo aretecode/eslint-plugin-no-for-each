@@ -3,8 +3,14 @@
 - IS A [WIP]
 - [ ] add large js files to test failed fixing & missing safety
 
+Before: 
+
 ![image](https://cloud.githubusercontent.com/assets/4022631/20047084/8ed348e0-a465-11e6-90f4-4715f5498699.png)
+
+After: 
+
 ![image](https://cloud.githubusercontent.com/assets/4022631/20047086/91c3d894-a465-11e6-8eb9-62f0240a9b47.png)
+
 
 ## Installation
 
@@ -44,7 +50,3 @@ Then configure the rules you want to use under the rules section.
     }
 }
 ```
-
-## Supported Rules
-
-* Fill in provided rules here
