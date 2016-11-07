@@ -10,12 +10,12 @@ Before:
 After: 
 
 `['error', 'cache-length']` 
-
-![image](https://cloud.githubusercontent.com/assets/4022631/20047086/91c3d894-a465-11e6-8eb9-62f0240a9b47.png)
+![image](https://cloud.githubusercontent.com/assets/4022631/20047228/fa5ed9fc-a466-11e6-87b6-f490be782748.png)
 
 `['error']`
 
-![image](https://cloud.githubusercontent.com/assets/4022631/20047169/715fd228-a466-11e6-865c-8dd8d27e232f.png)
+![image](https://cloud.githubusercontent.com/assets/4022631/20047232/ffab29a6-a466-11e6-8dcf-436c40d97757.png)
+
 
 
 ## Installation
