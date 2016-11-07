@@ -9,7 +9,13 @@ Before:
 
 After: 
 
+`['error', 'cache-length']` 
+
 ![image](https://cloud.githubusercontent.com/assets/4022631/20047086/91c3d894-a465-11e6-8eb9-62f0240a9b47.png)
+
+`['error']`
+
+![image](https://cloud.githubusercontent.com/assets/4022631/20047169/715fd228-a466-11e6-865c-8dd8d27e232f.png)
 
 
 ## Installation
