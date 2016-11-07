@@ -58,7 +58,6 @@ eslintTester.run('no-for-each', rule, {
         message: 'NO FOR EACH',
       }]
     },
-
     // replacement test
     {
       code: 'var something = "eh"; var eh = ["test-array"]; \n eh.forEach(function(el, index){console.log(el)});',
@@ -66,5 +65,13 @@ eslintTester.run('no-for-each', rule, {
         message: 'NO FOR EACH',
       }]
     },
+    // @TODO: is not able to parse this in tests, but able to in client
+    // {
+    //   code: 'Object.keys(types).forEach(type => delete types[type])',
+    //   errors: [{
+    //     message: 'NO FOR EACH',
+    //   }]
+    // },
+
   ],
 })
