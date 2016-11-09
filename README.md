@@ -15,6 +15,9 @@ After:
 
 ![image](https://cloud.githubusercontent.com/assets/4022631/20047232/ffab29a6-a466-11e6-8dcf-436c40d97757.png)
 
+# Perf 
+![image](https://cloud.githubusercontent.com/assets/4022631/20155307/1dbdd842-a680-11e6-8173-0ffe995f1cae.png)
+
 # Resources
 - https://www.kenneth-truyers.net/2016/05/27/writing-custom-eslint-rules/
 - https://github.com/airbnb/javascript/issues/851
@@ -34,7 +37,7 @@ After:
 - https://github.com/buildo/eslint-plugin-no-loops (had no fixing, was no loops in general)
 - https://github.com/airbnb/javascript#iterators--nope
 - https://www.paypal-engineering.com/2014/12/12/maintaining-javascript-code-quality-with-eslint/
-
+- https://jsperf.com/foreach-vs-reduce-vs-for-loop
 
 ## Installation
 
