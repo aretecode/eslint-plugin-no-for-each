@@ -26,50 +26,50 @@ eslintTester.run('no-for-each', rule, {
     // {
     //   code: 'var eh = ["test-array"].forEach(function(){});',
     //   errors: [{
-    //     message: 'NO FOR EACH',
+    //     message: 'no for each loop',
     //   }]
     // },
 
     {
       code: 'variable.forEach(function() {})',
-      errors: [{message: 'NO FOR EACH'}]
+      errors: [{message: 'no for each loop'}]
     },
     {
       code: 'variable.forEach(function () {})',
       errors: [{
-        message: 'NO FOR EACH',
+        message: 'no for each loop',
       }]
     },
     {
       code: 'variable.forEach(function(param) {console.log(param)})',
       errors: [{
-        message: 'NO FOR EACH',
+        message: 'no for each loop',
       }]
     },
     {
       code: 'variable.forEach(function(param) {console.log(param)})',
       errors: [{
-        message: 'NO FOR EACH',
+        message: 'no for each loop',
       }]
     },
     {
       code: '["test-array"].forEach(function(el, index){console.log(el)});',
       errors: [{
-        message: 'NO FOR EACH',
+        message: 'no for each loop',
       }]
     },
     // replacement test
     {
       code: 'var something = "eh"; var eh = ["test-array"]; \n eh.forEach(function(el, index){console.log(el)});',
       errors: [{
-        message: 'NO FOR EACH',
+        message: 'no for each loop',
       }]
     },
     // @TODO: is not able to parse this in tests, but able to in client
     // {
     //   code: 'Object.keys(types).forEach(type => delete types[type])',
     //   errors: [{
-    //     message: 'NO FOR EACH',
+    //     message: 'no for each loop',
     //   }]
     // },
 
