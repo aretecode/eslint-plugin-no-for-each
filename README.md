@@ -1,6 +1,5 @@
 # eslint-plugin-no-for-each
-What it does? Fix `forEach`, `for in`, and `for of` loops,
-- IS A [WIP]
+What it does? Fix `forEach`, `for in`, and `for of` loops.
 
 Before:
 
@@ -12,8 +11,45 @@ After:
 ![image](https://cloud.githubusercontent.com/assets/4022631/20047228/fa5ed9fc-a466-11e6-87b6-f490be782748.png)
 
 `['error']`
-
 ![image](https://cloud.githubusercontent.com/assets/4022631/20047232/ffab29a6-a466-11e6-8dcf-436c40d97757.png)
+
+https://jsperf.com/foreach-vs-for-loop-vs-for-in-vs-for-of-vs-babel-for-of
+
+## [Installation](#installation)
+
+You'll first need to install [ESLint](http://eslint.org):
+
+```
+$ npm i eslint --save-dev
+```
+
+Next, install `eslint-plugin-no-for-each`:
+
+```
+$ npm install eslint-plugin-no-for-each --save-dev
+```
+
+**Note:** If you installed ESLint globally (using the `-g` flag) then you must also install `eslint-plugin-no-for-each` globally.
+
+## [Configuration](#configuration)
+Add `no-for-each` to the plugins section of your `.eslintrc` configuration file.
+Then configure the rules you want to use under the rules section.
+
+- default: `1` or `["error"]`
+- cache-length: `2`
+
+```json
+{
+  "plugins": [
+    "no-for-each"
+  ],
+  "rules": {
+    "no-for-each/no-for-each": 2,
+    "no-for-each/no-for-of": 2,
+    "no-for-each/no-for-in": 2
+  }
+}
+```
 
 # Resources
 - https://www.kenneth-truyers.net/2016/05/27/writing-custom-eslint-rules/
@@ -34,47 +70,86 @@ After:
 - https://github.com/buildo/eslint-plugin-no-loops (had no fixing, was no loops in general)
 - https://github.com/airbnb/javascript#iterators--nope
 - https://www.paypal-engineering.com/2014/12/12/maintaining-javascript-code-quality-with-eslint/
+- https://babeljs.io/repl/
 
-
-## Installation
-
-You'll first need to install [ESLint](http://eslint.org):
-
-```
-$ npm i eslint --save-dev
-```
-
-Next, install `eslint-plugin-no-for-each`:
-
-```
-$ npm install eslint-plugin-no-for-each --save-dev
-```
-
-**Note:** If you installed ESLint globally (using the `-g` flag) then you must also install `eslint-plugin-no-for-each` globally.
-
-## Usage
-
-Add `no-for-each` to the plugins section of your `.eslintrc` configuration file. You can omit the `eslint-plugin-` prefix:
-
-```json
-{
-    "plugins": [
-        "no-for-each"
-    ]
+# jsperf
+```javascript
+var testData = [];
+for (var i = 0; i < 100; i++) {
+  testData.push(i);
 }
-```
+
+// forEach
+var res = 0;
+testData.forEach(function(x) {
+  res += x;
+});
+
+// for
+var res = 0;
+for (var i = 0; i < testData.length; i++) {
+  res += testData[i];
+}
+
+// for optimized
+var res = 0;
+for (var i = 0, len = testData.length; i < len; i++) {
+  res += testData[i];
+}
+
+// reduce
+var res = testData.reduce(function(sum, x) {
+  return sum + x;
+}, 0);
 
 
-Then configure the rules you want to use under the rules section.
+// while
+var res = 0;
+var i = testData.length;
+while (i--) {
+    res += testData[i];
+}
 
-- default: `2` or `['error']`
-- cache-length: `['error', 'cache-length']`
+// for in
+var res = 0;
+for (var data in testData) {
+  res += testData[i];
+}
 
-```json
-{
-    "rules": {
-        "no-for-each/no-for-each": 2
+
+// for of
+var res = 0;
+for (var data of testData) {
+  res += testData[i];
+}
+
+
+// for of babel
+var res = 0;
+var _iteratorNormalCompletion = true;
+var _didIteratorError = false;
+var _iteratorError = undefined;
+
+try {
+  for (var _iterator = testData[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+    var value = _step.value;
+
+    console.log(value);
+  }
+} catch (err) {
+  _didIteratorError = true;
+  _iteratorError = err;
+} finally {
+  try {
+    res += testData[i];
+    if (!_iteratorNormalCompletion && _iterator.return) {
+      _iterator.return();
     }
+  } finally {
+    if (_didIteratorError) {
+      throw _iteratorError;
+    }
+  }
 }
 ```
 
@@ -94,7 +169,9 @@ we do not use body.body because
 - [ ] add config option for `cache-length-inside-loop` (var i = 0, len = varName.length; ...)
 - [ ] recommend let => const rule
 - [ ] add large js files to test failed fixing & safety
-- [ ] fix eslint parsing `of`
-- [ ] clean up, publish, link to issues related to this in #resources
+- [x] fix eslint parsing `of`
+- [x] clean up, publish, link to issues related to this in #resources
 - [ ] isDev | isTest helper funcs
 - [ ] ^ add args in tests for `devtest`
+- [x] add all 3 configs to example
+- [ ] comment on readmes
