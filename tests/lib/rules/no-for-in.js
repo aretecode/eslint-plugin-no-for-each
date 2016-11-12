@@ -11,5 +11,9 @@ eslintTester.run('no-for-in', rule, {
       code: 'for (eh in canada) { }',
       errors: [{message: 'no for in loop'}]
     },
+    {
+      code: 'for (var eh in canada) { }',
+      errors: [{message: 'no for in loop'}]
+    },
   ],
 })
