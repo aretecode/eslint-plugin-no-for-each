@@ -182,3 +182,4 @@ we do not use body.body because
 - [ ] move todos to issues
 - [ ] add allow for `const propKey = propKeys[i]` in loops, and add comment above?
 - [ ] use type in the `left` of the loop such as `const`, `let`, `var`
+- [ ] add `for` loop fixing to `for` optimizing

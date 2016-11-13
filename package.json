@@ -1,11 +1,13 @@
 {
   "name": "eslint-plugin-no-for-each",
-  "version": "0.1.0",
-  "description": "fix forEach loops",
+  "version": "0.1.1",
+  "description": "fix forEach, for in, and for of loops",
   "keywords": [
     "eslint",
     "eslintplugin",
     "eslint-plugin",
+    "for in",
+    "for of",
     "foreach",
     "loops",
     "optimization"
