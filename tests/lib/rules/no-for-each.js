@@ -80,6 +80,20 @@ eslintTester.run('no-for-each', rule, {
       }]
     },
 
+    {
+      code: `namesWithParser.forEach( (name) => {
+        let {destructuring, two} = objectVariable
+        if (destructuring) console.log(name)
+        if (two) console.log(name)
+        return {two, name}
+      })`,
+      parser: 'babel-eslint',
+      errors: [{
+        message: 'no for each loop',
+      }]
+    },
+
+
 
     // @TODO: is not able to parse this in tests, but able to in client
     // {
