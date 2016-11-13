@@ -4,18 +4,27 @@ var RuleTester = require('eslint').RuleTester
 var eslintTester = new RuleTester()
 eslintTester.run('no-for-of', rule, {
   valid: [
-    'var example = null; \n var canada = "moose"; \n var eh = "igloo"; \n\n'
+    'var eh = []; for (var i = 0; i < eh.length; i++) { console.log(eh[i]) } '
   ],
   invalid: [
-    // {
-    //  code: 'for (let [key, value] of iterable) {console.log(value);}',
-    // }
-    // {
-    //   code: '\n for (var value of iterable) { \n console.log(value) \n }',
-    //   errors: [{message: 'no for of loop'}]
-    // },
+    {
+      // @NOTE: does not get auto-fixed.
+      code: 'for (let [key, value] of iterable) {console.log(value);}',
+      parser: 'babel-eslint',
+      errors: [{message: 'no for of loop'}]
+    },
     {
       code: '\n for (var value of iterable) { \n console.log(value) \n }',
+      parser: 'babel-eslint',
+      errors: [{message: 'no for of loop'}]
+    },
+    {
+      code: 'for (var value of canada) { \n console.log(value) \n }',
+      parser: 'babel-eslint',
+      errors: [{message: 'no for of loop'}]
+    },
+    {
+      code: 'for (var value of canada) console.log(value)',
       parser: 'babel-eslint',
       errors: [{message: 'no for of loop'}]
     },

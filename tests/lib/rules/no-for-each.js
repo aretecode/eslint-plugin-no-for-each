@@ -1,26 +1,10 @@
-/**
- * @fileoverview no for each
- * @author aretecode
- */
-
-
-//------------------------------------------------------------------------------
-// Requirements
-//------------------------------------------------------------------------------
-
 var rule = require('../../../lib/rules/no-for-each')
 var RuleTester = require('eslint').RuleTester
 
-
-//------------------------------------------------------------------------------
-// Tests
-//------------------------------------------------------------------------------
-
-// @TODO: \n & spacing
 var eslintTester = new RuleTester()
 eslintTester.run('no-for-each', rule, {
   valid: [
-    'var eh = []; for (var i = 0; i < eh.length; i++) { } '
+    'var eh = []; for (var i = 0; i < eh.length; i++) { console.log(eh[i]) } '
   ],
   invalid: [
     // {
@@ -30,6 +14,14 @@ eslintTester.run('no-for-each', rule, {
     //   }]
     // },
 
+    {
+      code: 'variables.forEach (function(variable) {console.log(variable)})',
+      errors: [{message: 'no for each loop'}]
+    },
+    {
+      code: 'variables.forEach (function(variable) \n {\nconsole.log(variable)\n})',
+      errors: [{message: 'no for each loop'}]
+    },
     {
       code: 'variable.forEach(function() {})',
       errors: [{message: 'no for each loop'}]

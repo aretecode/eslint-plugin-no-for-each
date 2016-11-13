@@ -72,6 +72,9 @@ Then configure the rules you want to use under the rules section.
 - https://www.paypal-engineering.com/2014/12/12/maintaining-javascript-code-quality-with-eslint/
 - https://babeljs.io/repl/
 
+# known bugs
+- [ ] properly parse `Object.keys(apples).forEach(apple => delete apples[apple])` because it replaces `apple` with new var, but not `apples` so it leaves the `s`
+
 # jsperf
 ```javascript
 var testData = [];
@@ -165,6 +168,7 @@ we do not use body.body because
 - 2) we want to keep curly braces (or lack of from the source
 ----
 
+(when it has proper configs and has large files to test, then release 1.0.0)
 # @TODO:
 - [ ] add config option for `cache-length-inside-loop` (var i = 0, len = varName.length; ...)
 - [ ] recommend let => const rule
@@ -175,3 +179,6 @@ we do not use body.body because
 - [ ] ^ add args in tests for `devtest`
 - [x] add all 3 configs to example
 - [ ] comment on readmes
+- [ ] move todos to issues
+- [ ] add allow for `const propKey = propKeys[i]` in loops, and add comment above?
+- [ ] use type in the `left` of the loop such as `const`, `let`, `var`
