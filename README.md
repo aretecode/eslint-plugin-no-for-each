@@ -74,6 +74,8 @@ Then configure the rules you want to use under the rules section.
 
 # known bugs
 - [ ] properly parse `Object.keys(apples).forEach(apple => delete apples[apple])` because it replaces `apple` with new var, but not `apples` so it leaves the `s`
+- [ ] nested loops, will do this soon
+- [ ] truncating body at some point
 
 # jsperf
 ```javascript
@@ -183,3 +185,8 @@ we do not use body.body because
 - [ ] add allow for `const propKey = propKeys[i]` in loops, and add comment above?
 - [ ] use type in the `left` of the loop such as `const`, `let`, `var`
 - [ ] add `for` loop fixing to `for` optimizing
+- [x] fix foreach len var name
+- [x] fix for and for in len var name
+- [x] fix global replace
+- [ ] o.hasOwnProperty for for in/of
+- [ ] https://jsperf.com/reduce-vs-foreach-vs-map-vs-loop

@@ -19,6 +19,12 @@ eslintTester.run('no-for-in', rule, {
       code: 'for (var eh in canada) { }',
       errors: [{message: 'no for in loop'}]
     },
+    // making sure all instances are replaced
+    {
+      code: 'for (var value in canada) { \n console.log(value) \n console.log(value) \n }',
+      parser: 'babel-eslint',
+      errors: [{message: 'no for in loop'}]
+    },
     {
       code: 'for (var eh in canada) { \n console.log(eh) \n }',
       errors: [{message: 'no for in loop'}]

@@ -57,6 +57,13 @@ eslintTester.run('no-for-each', rule, {
         message: 'no for each loop',
       }]
     },
+    // making sure all instances are replaced
+    {
+      code: 'var eh = ["test-array"]; \n eh.forEach(function(value, index) { \n console.log(value); \n console.log(value); \n })',
+      parser: 'babel-eslint',
+      errors: [{message: 'no for each loop'}]
+    },
+
     {
       code: 'var canadians = ["north of the wall"]; canadians.forEach(function(canadian, index) { console.log(canadian, index) })',
       errors: [{
