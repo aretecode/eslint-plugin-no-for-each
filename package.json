@@ -1,6 +1,6 @@
 {
   "name": "eslint-plugin-no-for-each",
-  "version": "0.0.10",
+  "version": "0.1.0",
   "description": "fix forEach loops",
   "keywords": [
     "eslint",
