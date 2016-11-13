@@ -75,7 +75,7 @@ Then configure the rules you want to use under the rules section.
 # known bugs
 - [ ] properly parse `Object.keys(apples).forEach(apple => delete apples[apple])` because it replaces `apple` with new var, but not `apples` so it leaves the `s`
 - [ ] nested loops, will do this soon
-- [ ] truncating body at some point
+- [x] truncating body at some point
 
 # jsperf
 ```javascript
