@@ -72,6 +72,15 @@ eslintTester.run('no-for-each', rule, {
     },
 
 
+    {
+      code: `paths.forEach( function (path) { \n let pathArray = path.split('.'); \n let val = pathArray[i]; \n if (val === undefined) throw new Error(path); \n picked = someFn(pathArray, val); \n})`,
+      parser: 'babel-eslint',
+      errors: [{
+        message: 'no for each loop',
+      }]
+    },
+
+
     // @TODO: is not able to parse this in tests, but able to in client
     // {
     //   code: 'Object.keys(types).forEach(type => delete types[type])',
