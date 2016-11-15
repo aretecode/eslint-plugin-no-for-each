@@ -71,6 +71,7 @@ Then configure the rules you want to use under the rules section.
 - https://github.com/airbnb/javascript#iterators--nope
 - https://www.paypal-engineering.com/2014/12/12/maintaining-javascript-code-quality-with-eslint/
 - https://babeljs.io/repl/
+- http://eslint.org/docs/rules/
 
 # known bugs
 - [ ] properly parse `Object.keys(apples).forEach(apple => delete apples[apple])` because it replaces `apple` with new var, but not `apples` so it leaves the `s`
@@ -184,9 +185,6 @@ we do not use body.body because
 - [ ] move todos to issues
 - [ ] add allow for `const propKey = propKeys[i]` in loops, and add comment above?
 - [ ] use type in the `left` of the loop such as `const`, `let`, `var`
-- [ ] add `for` loop fixing to `for` optimizing
-- [x] fix foreach len var name
-- [x] fix for and for in len var name
-- [x] fix global replace
 - [ ] o.hasOwnProperty for for in/of
 - [ ] https://jsperf.com/reduce-vs-foreach-vs-map-vs-loop
+- [ ] (lower priority) make a guide how to make an eslint plugin
