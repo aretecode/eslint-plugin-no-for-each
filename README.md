@@ -46,8 +46,17 @@ Then configure the rules you want to use under the rules section.
   "rules": {
     "no-for-each/no-for-each": 2,
     "no-for-each/no-for-of": 2,
-    "no-for-each/no-for-in": 2
+    "no-for-each/no-for-in": 2,
   }
+}
+```
+
+## two additional WIP rules
+```json
+"rules": {
+  "...": "...",
+  "no-for-each/cache-for-length": 2,
+  "no-excessive-blank-lines": 2
 }
 ```
 

@@ -1,6 +1,21 @@
 module.exports = {
   'parser': 'babel-eslint',
   'extends': 'eslint:recommended',
+  'globals': {
+    'G': false,
+    'beforeEach': true,
+    'before': true,
+    'after': true,
+    'afterEach': true,
+    'describe': true,
+    'it': true,
+    'context': true,
+    'debug': true,
+    require: true,
+    console: true,
+    process: true,
+    module: true,
+  },
   'rules': {
     'space-before-function-paren': [
       'error',
@@ -41,6 +56,8 @@ module.exports = {
     'no-fallthrough': 1,
     'handle-callback-err': 1,
     'camelcase': 0,
+
+    'no-console': 0,
 
     'no-dupe-keys': 2,
     'no-empty-character-class': 2,
