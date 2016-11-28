@@ -1,4 +1,4 @@
 node_modules
 .DS_STORE
-node-log.log
+*.log
 dist

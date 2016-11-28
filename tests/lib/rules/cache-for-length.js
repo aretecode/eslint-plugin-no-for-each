@@ -4,7 +4,7 @@ var RuleTester = require('eslint').RuleTester
 var eslintTester = new RuleTester()
 eslintTester.run('cache-for-length', rule, {
   valid: [
-    'var eh = []; for (var i = 0, len = eh.length; i < len; i++) { console.log(eh[i]) } '
+    'var eh = []; for (var i = 0, len = eh.length; i < len; i++) { console.log(eh[i]) } ',
   ],
   invalid: [
     {

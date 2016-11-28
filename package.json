@@ -1,6 +1,6 @@
 {
   "name": "eslint-plugin-no-for-each",
-  "version": "0.1.11",
+  "version": "0.1.12",
   "description": "fix forEach, for in, for of, and for loops",
   "keywords": [
     "eslint",
@@ -10,7 +10,8 @@
     "for of",
     "foreach",
     "loops",
-    "optimization"
+    "optimization",
+    "autofix"
   ],
   "author": "aretecode",
   "main": "lib/index.js",
@@ -22,9 +23,9 @@
     "requireindex": "~1.1.0"
   },
   "devDependencies": {
-    "eslint": "3.9.1",
+    "eslint": "^3.11.1",
     "eslint-loader": "1.5.0",
-    "mocha": "3.1.2"
+    "mocha": "3.2.0"
   },
   "peerDependencies": {
     "eslint": "^2.0.0 || ^3.0.0"
