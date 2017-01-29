@@ -15,6 +15,13 @@ After:
 
 https://jsperf.com/foreach-vs-for-loop-vs-for-in-vs-for-of-vs-babel-for-of
 
+can copy paste in, hit save, autofix loops without doing the whole project if you use immutables or need the loops
+```
+/* eslint 'no-for-each/no-for-each': 2 */
+/* eslint 'no-for-in/no-for-in': 2 */
+/* eslint 'no-for-of/no-for-of': 2 */
+```
+
 ## [Installation](#installation)
 
 You'll first need to install [ESLint](http://eslint.org):
