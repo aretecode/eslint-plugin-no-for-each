@@ -1,4 +1,20 @@
 # eslint-plugin-no-for-each
+[![Build Status](https://travis-ci.org/aretecode/eslint-plugin-no-for-each.svg?branch=master)](https://travis-ci.org/aretecode/eslint-plugin-no-for-each)
+[![MIT License][license-image]][license-url]
+[![NPM version][npm-image]][npm-url]
+[![Dependencies][david-deps-img]][david-deps-url]
+[![Standard JS Style][standard-image]][standard-url]
+
+[npm-image]: https://img.shields.io/npm/v/eslint-plugin-no-for-each.svg
+[npm-url]: https://npmjs.org/package/eslint-plugin-no-for-each
+[david-deps-img]: https://david-dm.org/aretecode/eslint-plugin-no-for-each.svg
+[david-deps-url]: https://david-dm.org/aretecode/eslint-plugin-no-for-each
+[standard-image]: https://img.shields.io/badge/code%20style-standard%2Bes6+-brightgreen.svg
+[standard-url]: https://github.com/crocodilejs/eslint-config-aretecode
+[license-image]: http://img.shields.io/badge/license-MIT-blue.svg?style=flat
+[license-url]: https://spdx.org/licenses/MIT
+
+
 What it does? Fix `forEach`, `for in`, and `for of` loops.
 
 Before:
